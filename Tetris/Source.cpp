@@ -6,7 +6,7 @@ using namespace std;
 
 const int noTetromino = 7;
 
-wstring tetromino[noTetromino];
+string tetromino[noTetromino];
 
 void PopulateAssets();
 
@@ -23,9 +23,15 @@ void PopulateAssets() {
 
 		ifstream infile("../Assets/Tetromino" + to_string(i) + ".TETROMINO");
 
+		string line;
+
 		if (!infile.is_open()) {
 			cerr << "Could not find file " << "../Assets/Tetromino" + to_string(i) + ".TETROMINO";
 			exit(1);
+		}
+
+		while (getline(infile, line)) {
+			tetromino[i].append(line);
 		}
 
 	}
