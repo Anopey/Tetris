@@ -6,11 +6,14 @@ using namespace std;
 
 const int noTetromino = 7;
 
+const int nFieldWidth = 12, nFieldHeight = 18;
+unsigned char* pfield = nullptr;
+
 string tetromino[noTetromino];
 
 void PopulateAssets();
 
-int Rotate();
+int Rotate(int px, int py, int r);
 
 int main() {
 
